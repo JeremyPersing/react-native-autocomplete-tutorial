@@ -2,11 +2,14 @@ import { StyleSheet } from "react-native";
 
 import EditScreenInfo from "@/components/EditScreenInfo";
 import { Text, View } from "@/components/Themed";
+import { useLocalSearchParams } from "expo-router";
 
-export default function TabOneScreen() {
+export default function TickersScreen() {
+  const { ticker } = useLocalSearchParams();
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Hi there</Text>
+      <Text style={styles.title}>{ticker}</Text>
       <View
         style={styles.separator}
         lightColor="#eee"
